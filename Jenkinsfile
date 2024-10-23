@@ -1,13 +1,13 @@
 pipeline {
     environment {
-        IMAGEN = "josedom24/myapp"
+        IMAGEN = "iancacace/myapp"
         USUARIO = 'dockerHubCred'
     }
     agent any
     stages {
         stage('Clone') {
             steps {
-                git branch: "main", url: 'https://github.com/iancacace/jenkins_docker_test1'
+                git branch: "main", url: 'https://github.com/iancacace/jenkins_docker_test1.git'
             }
         }
         stage('Build') {
@@ -39,7 +39,8 @@ pipeline {
         }
         stage('Clean Up') {
             steps {
-                sh "docker rmi $IMAGEN:$BUILD_NUMBER"
+              #  sh "docker rmi $IMAGEN:$BUILD_NUMBER"
+                echo "FIN"
                 }
         }
     }
