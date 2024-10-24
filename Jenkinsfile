@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        IMAGEN = "iancacace/myapp"
+        IMAGEN = "iancacace/jkapp"
         USUARIO = 'dockerHubCred'
     }
     agent any
